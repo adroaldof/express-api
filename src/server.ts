@@ -1,9 +1,10 @@
-import express, { Request, Response } from 'express'
+import express from 'express'
 
 import { host, port } from './configs/server'
+import { loadRoutes } from './router'
 
 const server = express()
 
-server.get('/', (req: Request, res: Response) => res.send({ ok: true }))
+loadRoutes(server)
 
 server.listen(port, () => console.log(`Listen on ${host}:${port}`))
