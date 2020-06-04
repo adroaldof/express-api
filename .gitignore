@@ -20,6 +20,9 @@ node_modules/
 ###############################################################################
 
 !.editorconfig
+!.eslintrc.json
 !.gitignore
+!.huskyrc
+!.lintstagedrc
 !.nvmrc
 !.prettierrc
