@@ -1,10 +1,17 @@
+import bodyParser from 'body-parser'
 import express from 'express'
 
-import { host, port } from './configs/server'
+import { env, host, port } from './configs/server'
 import { loadRoutes } from './router'
 
 const server = express()
 
+server.use(bodyParser.json())
+
 loadRoutes(server)
 
-server.listen(port, () => console.log(`Listen on ${host}:${port}`))
+if (env !== 'test') {
+  server.listen(port, () => console.log(`Listen on ${host}:${port}`))
+}
+
+export { server }

@@ -1,7 +1,9 @@
-import { Request, Response, Router } from 'express'
+import { Router } from 'express'
+
+import { getRoot } from './get/get-root'
 
 const router = Router()
 
-router.get('/', (req: Request, res: Response) => res.send({ ok: true, now: new Date() }))
+router.get('/', getRoot)
 
 export const rootRouter = router
